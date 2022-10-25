@@ -3,8 +3,9 @@
 Разработать CRUD Rest API для работы с мероприятиями (создание, изменение,
 удаление, получение), выполняется на Java 11 или 17 и PostgreSQL.<br>
 Инструкция по запуску проекта (в т.ч. скрипты для БД).
-1. docker-compose up
-2. Запустить скрипты из папки sql_script в PostgreSQL
+1. mvn clean install
+2. docker-compose up
+3. Запустить скрипты из папки sql_script в PostgreSQL
 
 #### Endpoints
 1. Получение списка всех событий
