@@ -16,6 +16,10 @@ public class EventBaseDAO implements EventDAO {
         this.entityManager = entityManager;
     }
 
+    public int calc(int a, int b) {
+        return a + b;
+    }
+
     @Override
     public List<Event> getAllEntities(String sortBy, String sortDir, String filterBy, String filterValue) {
         Session session = entityManager.unwrap(Session.class);
@@ -52,7 +56,8 @@ public class EventBaseDAO implements EventDAO {
     public Optional<Event> getEntityByTopic(String topic) {
         Session session = entityManager.unwrap(Session.class);
         Event event = session.createQuery("FROM Event WHERE  topic = :topic", Event.class)
-                .setParameter("topic", topic).getSingleResult();
+                .setParameter("topic", topic)
+                .getSingleResult();
         return Optional.of(event);
     }
 }
