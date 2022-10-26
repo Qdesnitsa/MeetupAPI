@@ -5,7 +5,6 @@
 Инструкция по запуску проекта (в т.ч. скрипты для БД).
 1. mvn clean install
 2. docker-compose up
-3. Запустить скрипты из папки sql_script в PostgreSQL
 
 #### Endpoints
 1. Получение списка всех событий

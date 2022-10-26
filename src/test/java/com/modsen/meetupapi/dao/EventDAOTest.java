@@ -28,7 +28,7 @@ public class EventDAOTest {
         final String sortDir = "asc";
         final String filterBy = "organizer";
         final String filterValue = "USA";
-        final String expectedSql = "SELECT * FROM events WHERE " + filterBy + " LIKE '%" + filterValue + "%' ORDER BY " + sortBy + " " + sortDir;
+        final String expectedSql = "SELECT * FROM postgres.meetup.events WHERE " + filterBy + " LIKE '%" + filterValue + "%' ORDER BY " + sortBy + " " + sortDir;
         final NativeQuery nativeQueryMock = getNativeQueryResultListMock();
         final Session sessionMock = getSessionCreateSQLQueryMock(nativeQueryMock);
         final EntityManager entityManagerMock = getEntityManagerMock(sessionMock);

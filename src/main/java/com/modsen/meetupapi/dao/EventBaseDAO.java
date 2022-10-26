@@ -24,7 +24,7 @@ public class EventBaseDAO implements EventDAO {
     public List<Event> getAllEntities(String sortBy, String sortDir, String filterBy, String filterValue) {
         Session session = entityManager.unwrap(Session.class);
         List<Event> allEvents = session
-                .createSQLQuery("SELECT * FROM events WHERE " + filterBy + " LIKE '%" + filterValue + "%' ORDER BY " + sortBy + " " + sortDir)
+                .createSQLQuery("SELECT * FROM postgres.meetup.events WHERE " + filterBy + " LIKE '%" + filterValue + "%' ORDER BY " + sortBy + " " + sortDir)
                 .getResultList();
         return allEvents;
     }
