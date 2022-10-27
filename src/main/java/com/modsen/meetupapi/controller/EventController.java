@@ -10,13 +10,16 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+
 @RestController
 @RequestMapping("api/events")
 public class EventController {
     BaseService baseService;
-    public EventController(@Qualifier("eventBaseService")BaseService baseService) {
+
+    public EventController(@Qualifier("eventBaseService") BaseService baseService) {
         this.baseService = baseService;
     }
+
     @GetMapping
     public ResponseEntity<List<Event>> getAllEvents(
             @RequestParam(value = "sortBy", defaultValue = AppConstant.DEFAULT_SORT_BY, required = false) String sortBy,

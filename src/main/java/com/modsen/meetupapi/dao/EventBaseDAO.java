@@ -16,10 +16,6 @@ public class EventBaseDAO implements EventDAO {
         this.entityManager = entityManager;
     }
 
-    public int calc(int a, int b) {
-        return a + b;
-    }
-
     @Override
     public List<Event> getAllEntities(String sortBy, String sortDir, String filterBy, String filterValue) {
         Session session = entityManager.unwrap(Session.class);

@@ -15,20 +15,20 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "event_seq")
     @SequenceGenerator(name = "event_seq", sequenceName = "event_seq",
-            allocationSize = 1,initialValue=1)
+            allocationSize = 1, initialValue = 1)
     private Long eventId;
-    @NotBlank(message="*Should have topic")
-    @Size(min=2, max=255, message = "Should have between 2 and 255 symbols")
+    @NotBlank(message = "*Should have topic")
+    @Size(min = 2, max = 255, message = "Should have between 2 and 255 symbols")
     private String topic;
     private String description;
-    @NotBlank(message="*Should have event organizer")
-    @Size(min=2, max=255, message = "Should have between 2 and 255 symbols")
+    @NotBlank(message = "*Should have event organizer")
+    @Size(min = 2, max = 255, message = "Should have between 2 and 255 symbols")
     private String organizer;
-    @NotNull(message="*Should have date and time")
+    @NotNull(message = "*Should have date and time")
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
     private Timestamp dateTime;
-    @NotBlank(message="*Should have place where event is held")
-    @Size(min=2, max=255, message = "Should have between 2 and 255 symbols")
+    @NotBlank(message = "*Should have place where event is held")
+    @Size(min = 2, max = 255, message = "Should have between 2 and 255 symbols")
     private String place;
 
     public Event() {

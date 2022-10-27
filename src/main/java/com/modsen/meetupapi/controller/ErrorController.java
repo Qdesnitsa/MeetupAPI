@@ -23,7 +23,7 @@ public class ErrorController extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler({NullPointerException.class, StaleStateException.class, PSQLException.class})
     public ResponseEntity<Object> getErrorEntityIdNotFound() {
-        return new ResponseEntity<>(ID_NOT_FOUND,HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(ID_NOT_FOUND, HttpStatus.BAD_REQUEST);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class ErrorController extends ResponseEntityExceptionHandler {
         for (FieldError fielderror : fieldErrorList) {
             map.put(fielderror.getField(), fielderror.getDefaultMessage());
         }
-        return new ResponseEntity<>(map,HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(map, HttpStatus.BAD_REQUEST);
     }
 }
 
